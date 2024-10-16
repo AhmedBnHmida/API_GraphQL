@@ -12,7 +12,8 @@
 	</properties>
 	<build>
 
-        <!--
+
+
         <plugins>
        
         <plugin>
@@ -30,7 +31,10 @@
     <version>3.1.0</version>
 </plugin>
     </plugins>
-        -->
+
+
+
+
 </build>
   <dependencies>
   <dependency>
