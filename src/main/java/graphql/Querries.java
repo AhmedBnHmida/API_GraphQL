@@ -16,4 +16,11 @@ public class Querries implements GraphQLRootResolver {
     public List<RendezVous> listRendezVous(){
         return rdvRepo.getListeRendezVous();
     }
+
+    public List<RendezVous> getListeRendezVousByLogementRef(int reference) {
+        return rdvRepo.getListeRendezVousByLogementRef(reference);
+    }
+    public  RendezVous rendezVousById(int id){
+        return  rdvRepo.getRendezVousById(id);
+    }
 }

@@ -1,0 +1,36 @@
+package graphql;
+
+import com.coxautodev.graphql.tools.GraphQLRootResolver;
+import entite.Logement;
+import entite.RendezVous;
+import repository.LogementRepository;
+import repository.RendezVousRepository;
+
+public class Mutations implements GraphQLRootResolver {
+    public RendezVousRepository rdvRepo;
+    private LogementRepository logRepo;
+    public Mutations(RendezVousRepository rdvRepo, LogementRepository logRepo) {
+
+        this.rdvRepo = rdvRepo;
+        this.logRepo = logRepo;
+    }
+
+    public RendezVous addRendezVous(int id, String date, String heure, int refLog,String num) {
+        Logement logement=logRepo.getLogementsByReference(refLog);
+        RendezVous rendezVous = new RendezVous(id, date, heure, logement, num);
+        rdvRepo.addRendezVous(rendezVous);
+        return rendezVous;
+    }
+/*
+    public String updateRendezVous(int id, String date, String heure,String num){
+        Logement l=logementRepository.getLogementsByReference(id);
+        RendezVous r=new RendezVous( id, date, heure,l, num);
+        if(rdv.updateRendezVous(r))
+            return "succes";
+        return "echec";
+
+    }
+*/
+    public boolean deleteRendezVous(int id) {return rdvRepo.deleteRendezVous(id);}
+
+}

@@ -20,3 +20,17 @@ enum Type {
     Villa
     EtageVilla
 }
+type Querries {
+    listRendezVous: [RendezVous]
+    getListeRendezVousByLogementRef(reference:Int!):[RendezVous]
+    rendezVousById(id:Int!):RendezVous
+}
+type Mutation {
+    addRendezVous(date: String, heure: String, logement: Int, numTel: String): RendezVous
+    deleteRendezVous(id: Int): Boolean
+    updateRendezVous(id:Int,date: String, heure: String, numTel: String):String
+}
+schema {
+    query: Querries
+    mutation: Mutation
+}

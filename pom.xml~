@@ -34,10 +34,25 @@
 
 
 
-        
+
 </build>
   <dependencies>
-  <dependency>
+      <!-- For Logback -->
+      <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+          <version>1.2.11</version>
+      </dependency>
+
+      <!-- Or for Log4J 2 -->
+      <dependency>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-slf4j-impl</artifactId>
+          <version>2.19.0</version>
+      </dependency>
+
+
+      <dependency>
     <groupId>com.graphql-java</groupId>
     <artifactId>graphql-java</artifactId>
     <version>3.0.0</version>

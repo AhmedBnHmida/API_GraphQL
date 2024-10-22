@@ -51,6 +51,7 @@ public class RendezVousRepository {
 		}
 		return false;
 	}
+	/*
     public Logement getLogementByRDV(int idRDV) {
     	Logement logement = null;
 		for(RendezVous r:listeRendezVous){
@@ -59,6 +60,7 @@ public class RendezVousRepository {
 		}
 		return logement;
 	}
+	*/
     public boolean deleteRendezVous(int id){
 		Iterator<RendezVous> iterator=listeRendezVous.iterator();
 		while(iterator.hasNext()){
@@ -70,5 +72,22 @@ public class RendezVousRepository {
 		}
 		return false;
 	}
-	
+
+
+	public Logement getLogementByRDV(int idRDV) {
+		Logement logement = null;
+		for(RendezVous r:listeRendezVous){
+			if(r.getId()== idRDV)
+				return r.getLogement();
+		}
+		return logement;
+	}
+	public RendezVous getRendezVousById(int id) {
+
+		for(RendezVous r:listeRendezVous){
+			if(r.getId()== id)
+				return r;
+		}
+		return null;
+	}
 }

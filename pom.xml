@@ -37,7 +37,9 @@
 
 </build>
   <dependencies>
-  <dependency>
+
+
+      <dependency>
     <groupId>com.graphql-java</groupId>
     <artifactId>graphql-java</artifactId>
     <version>3.0.0</version>
