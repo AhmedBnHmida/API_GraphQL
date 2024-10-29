@@ -20,11 +20,11 @@ public class GraphQLEndPoint extends SimpleGraphQLServlet {
         RendezVousRepository rdvRepo = new RendezVousRepository();
         LogementRepository logRepo = new LogementRepository();
 
-        Mutations mutation = new Mutations(rdvRepo,logRepo);
+        Mutation mutation = new Mutation(rdvRepo,logRepo);
 
         return SchemaParser.newParser()
                 .file("schema.graphql")
-                .resolvers(new Querries(rdvRepo),new Mutations(rdvRepo,logRepo))
+                .resolvers(new Querries(rdvRepo,logRepo),new Mutation(rdvRepo,logRepo))
                 .build()
                 .makeExecutableSchema()  ;
     }

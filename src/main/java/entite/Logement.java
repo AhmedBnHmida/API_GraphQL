@@ -1,7 +1,10 @@
 package entite;
-
+import lombok.*;
 import java.util.Objects;
-
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 public class Logement {
 	private int reference;
 	private String adresse;
@@ -26,6 +29,11 @@ public class Logement {
 		this.prix = prix;
 	}
 
+	public Logement(int reference, String adresse) {
+		this.reference = reference;
+		this.adresse = adresse;
+	}
+/*
 	public int getReference() {
 		return reference;
 	}
@@ -94,4 +102,6 @@ public class Logement {
 	public int hashCode() {
 		return Objects.hash(reference, adresse, delegation, gouvernorat, type, description, prix);
 	}
+
+ */
 }

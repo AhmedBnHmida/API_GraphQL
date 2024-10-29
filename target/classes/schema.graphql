@@ -24,11 +24,17 @@ type Querries {
     listRendezVous: [RendezVous]
     getListeRendezVousByLogementRef(reference:Int!):[RendezVous]
     rendezVousById(id:Int!):RendezVous
+
+    listLogements: [Logement]
+    getLogementsByRef(reference: Int): Logement
+    getLogementsByType(type: Type ): [Logement]
 }
 type Mutation {
-    addRendezVous(id: Int, date: String, heure: String, refLog:Int, numTel: String): RendezVous
+    createRendezVous(id: Int, date: String, heure: String, refLog:Int, numTel: String): RendezVous
     deleteRendezVous(id: Int): Boolean
     updateRendezVous(id:Int,date: String, heure: String, numTel: String):String
+
+    createLogement(reference: Int,adresse: String ):[Logement]
 }
 schema {
     query: Querries
